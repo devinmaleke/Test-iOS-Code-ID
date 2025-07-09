@@ -9,21 +9,32 @@ import UIKit
 
 class RegistrationVC: UIViewController {
 
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var revealPassButton: UIButton!
+    @IBOutlet weak var revealConfirmPassButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
+    
+    
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapButton(_ sender: UIButton) {
+        if sender == revealPassButton {
+            Functions.securedField(textField: passwordTextField, sender: revealPassButton)
+        }else if sender == revealConfirmPassButton {
+            Functions.securedField(textField: confirmPasswordTextField, sender: revealConfirmPassButton)
+        }else if sender == continueButton {
+            navigationController?.popViewController(animated: true)
+        }
     }
-    */
-
+    
 }

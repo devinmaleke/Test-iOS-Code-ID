@@ -1,0 +1,6 @@
+framework module Pods_Test_Code_IDTests {
+  umbrella header "Pods-Test_Code_IDTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
