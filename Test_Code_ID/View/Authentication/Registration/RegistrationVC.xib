@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationVC" customModule="Test_Code_ID" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="jY8-xb-0Gf" id="bos-o3-QcP"/>
                 <outlet property="confirmPasswordTextField" destination="MNB-br-1Zd" id="b1B-SB-E0D"/>
                 <outlet property="continueButton" destination="2ZB-T6-uU1" id="Eko-aP-sIU"/>
                 <outlet property="emailTextField" destination="rHQ-J7-JZL" id="SrZ-J4-gY1"/>
@@ -29,6 +31,9 @@
                     <rect key="frame" x="16" y="75" width="48" height="38"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back"/>
+                    <connections>
+                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="p1X-EN-PYj"/>
+                    </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOY-3T-0tH">
                     <rect key="frame" x="0.0" y="119" width="393" height="683"/>
