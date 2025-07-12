@@ -16,5 +16,8 @@ class HomeListTVC: UITableViewCell {
         
     }
     
+    func setup(pokemon: String?) {
+        pokemonName.text = pokemon
+    }
     
 }

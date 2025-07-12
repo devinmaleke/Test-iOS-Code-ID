@@ -14,6 +14,7 @@
                 <outlet property="abilitiesValue" destination="y5r-zx-dxw" id="pic-xY-RWF"/>
                 <outlet property="backButton" destination="6b0-BO-dTD" id="zY7-Kd-6EN"/>
                 <outlet property="imageView" destination="zmC-Aj-woj" id="QiO-Ar-G0Q"/>
+                <outlet property="nameLabel" destination="sHB-dm-YVg" id="Guq-dT-sIA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
                         <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="hGh-pq-pAg"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-Aj-woj">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-Aj-woj">
                     <rect key="frame" x="16" y="182" width="90" height="90"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="CQe-Ad-eTf"/>
@@ -43,13 +44,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5r-zx-dxw">
-                    <rect key="frame" x="98.333333333333343" y="290" width="278.66666666666663" height="19.333333333333314"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5r-zx-dxw">
+                    <rect key="frame" x="98.333333333333343" y="288" width="278.66666666666663" height="19.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSC-cJ-If8">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSC-cJ-If8">
                     <rect key="frame" x="16" y="288" width="74.333333333333329" height="23"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                     <nil key="textColor"/>
@@ -60,7 +61,6 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wSC-cJ-If8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2B3-zU-dAv"/>
-                <constraint firstItem="y5r-zx-dxw" firstAttribute="centerY" secondItem="wSC-cJ-If8" secondAttribute="centerY" id="65q-UH-pFE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sHB-dm-YVg" secondAttribute="trailing" constant="16" id="DN7-cb-avB"/>
                 <constraint firstItem="wSC-cJ-If8" firstAttribute="top" secondItem="zmC-Aj-woj" secondAttribute="bottom" constant="16" id="LSF-mw-AeC"/>
                 <constraint firstItem="zmC-Aj-woj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NKb-vI-5mo"/>
@@ -70,6 +70,7 @@
                 <constraint firstItem="y5r-zx-dxw" firstAttribute="leading" secondItem="wSC-cJ-If8" secondAttribute="trailing" constant="8" id="XwO-cI-ivl"/>
                 <constraint firstItem="6b0-BO-dTD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Zkn-1r-Q4o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y5r-zx-dxw" secondAttribute="trailing" constant="16" id="bim-IW-g3l"/>
+                <constraint firstItem="y5r-zx-dxw" firstAttribute="top" secondItem="wSC-cJ-If8" secondAttribute="top" id="oxx-QV-ZV3"/>
                 <constraint firstItem="zmC-Aj-woj" firstAttribute="top" secondItem="sHB-dm-YVg" secondAttribute="bottom" constant="16" id="vkV-QC-sq7"/>
             </constraints>
             <point key="canvasLocation" x="56" y="20"/>

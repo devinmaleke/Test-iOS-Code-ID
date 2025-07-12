@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case decodingError(Error)
+    case apiError(String)
+    case urlError(URLError)
+    case unknown(statusCode: Int, error: Error)
+}
+
+struct ErrorResponse: Decodable {
+    let message: String
+}

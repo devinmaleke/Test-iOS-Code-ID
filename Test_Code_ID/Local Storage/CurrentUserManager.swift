@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class CurrentUserManager {
+    static let shared = CurrentUserManager()
+    private init() {}
+
+    private(set) var currentUser: UserModel?
+
+    func setCurrentUser(_ user: UserModel) {
+        self.currentUser = user
+    }
+
+    func clear() {
+        self.currentUser = nil
+    }
+}
