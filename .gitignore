@@ -1,0 +1,79 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon files
+Icon?
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Build products
+build/
+DerivedData/
+*.ipa
+*.app
+
+# Xcode files
+*.xcuserstate
+*.xcscmblueprint
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserdatad/
+
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Firebase
+GoogleService-Info.plist
+
+# Temporary files
+*.moved-aside
+*.swp
+*.lock
+*.tmp
+*.log
+
+# Archives
+*.xcarchive
+
+# Playground files
+timeline.xctimeline
+playground.xcworkspace
+
+# Xcode automatic build logs
+xcdebugger/
+*.xcactivitylog
+
+# User-specific files
+*.orig
+
+# SwiftUI previews cache
+*.preview-thumbnails
+
+# SPM local artifacts
+artifacts/
+
+# Environment files
+.env
