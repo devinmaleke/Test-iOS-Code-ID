@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6b0-BO-dTD">
-                    <rect key="frame" x="16" y="75" width="48" height="38"/>
+                    <rect key="frame" x="8" y="75" width="48" height="38"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back"/>
                     <connections>
@@ -66,7 +66,7 @@
                 <constraint firstItem="zmC-Aj-woj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NKb-vI-5mo"/>
                 <constraint firstItem="sHB-dm-YVg" firstAttribute="top" secondItem="6b0-BO-dTD" secondAttribute="bottom" constant="24" id="Tlq-nP-PCt"/>
                 <constraint firstItem="sHB-dm-YVg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="XCz-3d-5bj"/>
-                <constraint firstItem="6b0-BO-dTD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Xf7-PL-zNy"/>
+                <constraint firstItem="6b0-BO-dTD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Xf7-PL-zNy"/>
                 <constraint firstItem="y5r-zx-dxw" firstAttribute="leading" secondItem="wSC-cJ-If8" secondAttribute="trailing" constant="8" id="XwO-cI-ivl"/>
                 <constraint firstItem="6b0-BO-dTD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Zkn-1r-Q4o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y5r-zx-dxw" secondAttribute="trailing" constant="16" id="bim-IW-g3l"/>

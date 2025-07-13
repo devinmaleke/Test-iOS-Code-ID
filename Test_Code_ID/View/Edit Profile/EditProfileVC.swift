@@ -20,13 +20,16 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
     
-    private let viewModel = LoginVM()
+    private let viewModel = EditProfileVM()
+    var didUpdate: PublishRelay<Void> {
+        return viewModel.didUpdateProfile
+    }
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initUI()
+        bindViewModel()
+        viewModel.loadCurrentUser()
     }
     
     @IBAction func didTapButton(_ sender: UIButton) {
@@ -37,17 +40,30 @@ class EditProfileVC: UIViewController {
         }else if sender == revealConfirmPassButton{
             Functions.securedField(textField: confirmPasswordTF, sender: revealConfirmPassButton)
         }else if sender == confirmButton{
-            navigationController?.popViewController(animated: true)
+            viewModel.updateProfile()
         }
     }
     
-    private func initUI(){
-        if let currentUser = CurrentUserManager.shared.currentUser {
-            nameTF.text = currentUser.name
-            emailTF.text = currentUser.email
-            passwordTF.text = currentUser.password
-            confirmPasswordTF.text = currentUser.password
-        }
+    private func bindViewModel() {
+        nameTF.rx.text.orEmpty.bind(to: viewModel.name).disposed(by: disposeBag)
+        emailTF.rx.text.orEmpty.bind(to: viewModel.email).disposed(by: disposeBag)
+        passwordTF.rx.text.orEmpty.bind(to: viewModel.password).disposed(by: disposeBag)
+        confirmPasswordTF.rx.text.orEmpty.bind(to: viewModel.confirmPassword).disposed(by: disposeBag)
+        
+        viewModel.name.bind(to: nameTF.rx.text).disposed(by: disposeBag)
+        viewModel.email.bind(to: emailTF.rx.text).disposed(by: disposeBag)
+        viewModel.password.bind(to: passwordTF.rx.text).disposed(by: disposeBag)
+        viewModel.confirmPassword.bind(to: confirmPasswordTF.rx.text).disposed(by: disposeBag)
+        
+        viewModel.updateResult.subscribe(onNext: { [weak self] result in
+            switch result {
+            case .success(let message):
+                self?.showSuccessToast(message: message)
+                self?.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                self?.showErrorToast(message: error.localizedDescription)
+            }
+        }).disposed(by: disposeBag)
     }
     
 }

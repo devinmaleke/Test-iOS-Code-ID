@@ -127,13 +127,14 @@ class SQLiteManager {
     }
     
     // Update user on User table
-    func updateUser(name: String, password: String) -> Bool{
+    func updateUser(name: String, password: String, email: String) -> Bool {
         let updateStatementString = "UPDATE Users SET name=?, password=? WHERE email=?;"
         var updateStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK {
             sqlite3_bind_text(updateStatement, 1, (name as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(updateStatement, 3, (password as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 2, (password as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(updateStatement, 3, (email as NSString).utf8String, -1, nil)
 
             if sqlite3_step(updateStatement) == SQLITE_DONE {
                 print("User updated successfully.")

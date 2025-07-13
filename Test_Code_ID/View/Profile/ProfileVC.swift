@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 import XLPagerTabStrip
 
 class ProfileVC: UIViewController {
@@ -15,6 +16,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var signOutButton: UIButton!
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -23,9 +26,14 @@ class ProfileVC: UIViewController {
     @IBAction func didTapButton(_ sender: UIButton) {
         if sender == editProfileButton{
             let editProfileVC = EditProfileVC()
+            editProfileVC.didUpdate
+                .bind { [weak self] in
+                    self?.initUI()
+                }
+                .disposed(by: disposeBag)
             navigationController?.pushViewController(editProfileVC, animated: true)
         }else if sender == signOutButton{
-            
+            logout()
         }
     }
     
@@ -33,6 +41,15 @@ class ProfileVC: UIViewController {
         if let currentUser = CurrentUserManager.shared.currentUser {
             nameValueLabel.text = currentUser.name
             emailValueLabel.text = currentUser.email
+        }
+    }
+    
+    private func logout() {
+        CurrentUserManager.shared.setCurrentUser(nil)
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: ViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+            }
         }
     }
     

@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY8-xb-0Gf">
-                    <rect key="frame" x="16" y="75" width="48" height="38"/>
+                    <rect key="frame" x="8" y="75" width="48" height="38"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back"/>
                     <connections>
@@ -161,7 +161,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="xOY-3T-0tH" firstAttribute="top" secondItem="jY8-xb-0Gf" secondAttribute="bottom" constant="6" id="20x-H2-nwD"/>
-                <constraint firstItem="jY8-xb-0Gf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9E1-zq-rZD"/>
+                <constraint firstItem="jY8-xb-0Gf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="9E1-zq-rZD"/>
                 <constraint firstItem="xOY-3T-0tH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OBh-SM-Igt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xOY-3T-0tH" secondAttribute="bottom" constant="16" id="jYx-2Z-36i"/>
                 <constraint firstItem="jY8-xb-0Gf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="l7r-o1-2ie"/>

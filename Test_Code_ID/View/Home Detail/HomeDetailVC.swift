@@ -57,7 +57,10 @@ class HomeDetailVC: UIViewController {
                     .joined(separator: ", ")
                 
                 if let url = URL(string: detail.sprites.front_default ?? "") {
-                    imageView.kf.setImage(with: url)
+                    imageView.kf.setImage(
+                        with: url,
+                        placeholder: UIImage(named: "placeholder-image")
+                    )
                 }
                 
                 nameLabel.text = detail.name.capitalized

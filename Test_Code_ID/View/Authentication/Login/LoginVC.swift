@@ -46,23 +46,13 @@ class LoginVC: UIViewController {
                     self?.emailTextField.removeErrorBorder()
                     self?.passwordTextField.removeErrorBorder()
                     
-                    
                     let tabBarVC = TabBarVC()
                     self?.navigationController?.pushViewController(tabBarVC, animated: true)
                     
                 case .failure(let error):
                     self?.showErrorToast(message: "\(error.localizedDescription)")
-                    if self?.emailTextField.text?.isEmpty ?? true {
-                        self?.emailTextField.showErrorBorder()
-                    } else {
-                        self?.emailTextField.removeErrorBorder()
-                    }
-                    
-                    if self?.passwordTextField.text?.isEmpty ?? true {
-                        self?.passwordTextField.showErrorBorder()
-                    } else {
-                        self?.passwordTextField.removeErrorBorder()
-                    }
+                    self?.emailTextField.showErrorBorder()
+                    self?.passwordTextField.showErrorBorder()
                 }
             })
             .disposed(by: disposeBag)
