@@ -18,7 +18,7 @@ class LoginVM{
     func loginUser() {
         guard !email.value.trimmingCharacters(in: .whitespaces).isEmpty,
               !password.value.trimmingCharacters(in: .whitespaces).isEmpty else {
-            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email dan password wajib diisi."])
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email and password cannot be empty"])
             authResult.accept(.failure(error))
             return
         }
@@ -28,11 +28,11 @@ class LoginVM{
                 CurrentUserManager.shared.setCurrentUser(user)
                 authResult.accept(.success(user))
             } else {
-                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email atau password salah."])
+                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Incorrect email or password"])
                 authResult.accept(.failure(error))
             }
         } else {
-            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email atau password salah."])
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Incorrect email or password"])
             authResult.accept(.failure(error))
         }
     }}

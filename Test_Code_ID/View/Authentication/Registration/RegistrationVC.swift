@@ -76,7 +76,7 @@ class RegistrationVC: UIViewController {
             .subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let user):
-                    self?.showSuccessToast(message: "Berhasil daftar, halo \(user.name)!")
+                    self?.showSuccessToast(message: "Registration succeeded, halo \(user.name)!")
                     
                     self?.navigationController?.popViewController(animated: true)
                     
@@ -95,22 +95,22 @@ class RegistrationVC: UIViewController {
         resetTextFieldBorders()
         
         guard let name = nameTextField.text, !name.isEmpty else {
-            showError(for: nameTextField, message: "Nama tidak boleh kosong")
+            showError(for: nameTextField, message: "Name cannot be empty")
             return
         }
         
         guard let email = emailTextField.text, email.isValidEmail else {
-            showError(for: emailTextField, message: "Email tidak valid")
+            showError(for: emailTextField, message: "Email not valid")
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            showError(for: passwordTextField, message: "Password tidak boleh kosong")
+            showError(for: passwordTextField, message: "Password cannot be empty")
             return
         }
         
         guard let confirmPassword = confirmPasswordTextField.text, password == confirmPassword else {
-            showError(for: confirmPasswordTextField, message: "Konfirmasi password tidak cocok")
+            showError(for: confirmPasswordTextField, message: "Password confirmation does not match")
             return
         }
         

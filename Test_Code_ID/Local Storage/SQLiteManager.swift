@@ -126,7 +126,6 @@ class SQLiteManager {
         return nil
     }
     
-    // Update user on User table
     func updateUser(name: String, password: String, email: String) -> Bool {
         let updateStatementString = "UPDATE Users SET name=?, password=? WHERE email=?;"
         var updateStatement: OpaquePointer? = nil

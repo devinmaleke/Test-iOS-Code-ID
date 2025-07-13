@@ -38,22 +38,22 @@ class EditProfileVM{
               !trimmedEmail.isEmpty,
               !trimmedPassword.isEmpty,
               !trimmedConfirmPassword.isEmpty else {
-            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Semua field wajib diisi."])))
+            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Every field must be filled in"])))
             return
         }
 
         guard trimmedPassword == trimmedConfirmPassword else {
-            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Password dan konfirmasi tidak cocok."])))
+            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Password confirmation does not match"])))
             return
         }
 
         guard let currentUser = CurrentUserManager.shared.currentUser else {
-            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "User tidak ditemukan."])))
+            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "User not found"])))
             return
         }
 
         if trimmedName == currentUser.name && trimmedPassword == currentUser.password {
-            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Tidak ada data yang diubah."])))
+            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Nothing was updated"])))
             return
         }
 
@@ -67,12 +67,12 @@ class EditProfileVM{
             if let updatedUser = SQLiteManager.shared.getUserbyEmail(email: trimmedEmail) {
                 CurrentUserManager.shared.setCurrentUser(updatedUser)
                 didUpdateProfile.accept(())
-                updateResult.accept(.success("Profil berhasil diperbarui."))
+                updateResult.accept(.success("Profile updated successfully"))
             } else {
-                updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Gagal memuat data setelah update."])))
+                updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to load data after update"])))
             }
         } else {
-            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Gagal memperbarui profil."])))
+            updateResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Profile update failed"])))
         }
     }
 }

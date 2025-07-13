@@ -17,7 +17,7 @@ class RegisterVM {
 
     func registerUser() {
         if let _ = SQLiteManager.shared.getUserbyEmail(email: email.value) {
-            authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email sudah terdaftar."])))
+            authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Email is already registered"])))
             return
         }
 
@@ -28,10 +28,10 @@ class RegisterVM {
                 CurrentUserManager.shared.setCurrentUser(savedUser)
                 authResult.accept(.success(savedUser))
             } else {
-                authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Gagal mengambil user setelah registrasi."])))
+                authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch user after registration"])))
             }
         } else {
-            authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Registrasi gagal."])))
+            authResult.accept(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Registration failed"])))
         }
     }
 }

@@ -33,8 +33,8 @@
 		022098814201C00F15477986 /* Pods-Test_Code_IDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Code_IDTests.release.xcconfig"; path = "Target Support Files/Pods-Test_Code_IDTests/Pods-Test_Code_IDTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E9941B89E32C36B6F320BB3 /* Pods-Test_Code_ID-Test_Code_IDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Code_ID-Test_Code_IDUITests.debug.xcconfig"; path = "Target Support Files/Pods-Test_Code_ID-Test_Code_IDUITests/Pods-Test_Code_ID-Test_Code_IDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		16F2F37A2E1EA769009C8C4F /* Test_Code_ID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Code_ID.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16F2F3902E1EA76A009C8C4F /* Test_Code_IDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test_Code_IDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16F2F39A2E1EA76B009C8C4F /* Test_Code_IDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test_Code_IDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F2F3902E1EA76A009C8C4F /* Test_Code_IDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Test_Code_IDTests.xctest; path = "/Users/devinmaleke/Downloads/Test-iOS-Code-ID 2/build/Debug-iphoneos/Test_Code_ID.app/PlugIns/Test_Code_IDTests.xctest"; sourceTree = "<absolute>"; };
+		16F2F39A2E1EA76B009C8C4F /* Test_Code_IDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Test_Code_IDUITests.xctest; path = "/Users/devinmaleke/Downloads/Test-iOS-Code-ID 2/build/Debug-iphoneos/Test_Code_IDUITests-Runner.app/PlugIns/Test_Code_IDUITests.xctest"; sourceTree = "<absolute>"; };
 		30708F2612DDDB250D7732FC /* Pods-Test_Code_IDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Code_IDTests.debug.xcconfig"; path = "Target Support Files/Pods-Test_Code_IDTests/Pods-Test_Code_IDTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E4AA16FF7CF232CAF3E9637 /* Pods_Test_Code_ID_Test_Code_IDUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Code_ID_Test_Code_IDUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD109CF08031595517B4B36 /* Pods_Test_Code_ID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Code_ID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,16 +61,6 @@
 				16F2F3A22E1EA76B009C8C4F /* Exceptions for "Test_Code_ID" folder in "Test_Code_ID" target */,
 			);
 			path = Test_Code_ID;
-			sourceTree = "<group>";
-		};
-		16F2F3932E1EA76A009C8C4F /* Test_Code_IDTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Test_Code_IDTests;
-			sourceTree = "<group>";
-		};
-		16F2F39D2E1EA76B009C8C4F /* Test_Code_IDUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Test_Code_IDUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -107,8 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				16F2F37C2E1EA769009C8C4F /* Test_Code_ID */,
-				16F2F3932E1EA76A009C8C4F /* Test_Code_IDTests */,
-				16F2F39D2E1EA76B009C8C4F /* Test_Code_IDUITests */,
 				16F2F37B2E1EA769009C8C4F /* Products */,
 				4AF463B5D694BE07661BEF69 /* Pods */,
 				9C1A37279218FC9643AB5835 /* Frameworks */,
@@ -119,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				16F2F37A2E1EA769009C8C4F /* Test_Code_ID.app */,
-				16F2F3902E1EA76A009C8C4F /* Test_Code_IDTests.xctest */,
-				16F2F39A2E1EA76B009C8C4F /* Test_Code_IDUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,9 +173,6 @@
 			dependencies = (
 				16F2F3922E1EA76A009C8C4F /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				16F2F3932E1EA76A009C8C4F /* Test_Code_IDTests */,
-			);
 			name = Test_Code_IDTests;
 			productName = Test_Code_IDTests;
 			productReference = 16F2F3902E1EA76A009C8C4F /* Test_Code_IDTests.xctest */;
@@ -209,9 +192,6 @@
 			);
 			dependencies = (
 				16F2F39C2E1EA76B009C8C4F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				16F2F39D2E1EA76B009C8C4F /* Test_Code_IDUITests */,
 			);
 			name = Test_Code_IDUITests;
 			productName = Test_Code_IDUITests;

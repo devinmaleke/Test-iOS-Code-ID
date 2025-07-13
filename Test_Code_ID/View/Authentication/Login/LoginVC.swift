@@ -42,7 +42,7 @@ class LoginVC: UIViewController {
             .subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let user):
-                    self?.showSuccessToast(message: "Login sukses. Halo, \(user.name)")
+                    self?.showSuccessToast(message: "Login succeeded. Hi, \(user.name)")
                     self?.emailTextField.removeErrorBorder()
                     self?.passwordTextField.removeErrorBorder()
                     
